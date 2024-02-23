@@ -1,0 +1,524 @@
+<?xml version="1.0"?>
+<robot name="/home/haze/Desktop/RobotisOp3.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+  </link>
+  <link name="body">
+    <visual>
+      <origin xyz="-0.01675 0.052 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.172 0.01 0.063"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.01675 0.052 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.172 0.01 0.063"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.01675 -0.052 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.172 0.01 0.063"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.01675 -0.052 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.172 0.01 0.063"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.01675 0 0.06825" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.11 0.12 0.135"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.01675 0 0.06825" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.11 0.12 0.135"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="body"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="Neck" type="revolute">
+    <parent link="body"/>
+    <child link="NeckSolid"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.001 0 0.1365" rpy="0 0 0"/>
+  </joint>
+  <link name="NeckSolid">
+    <visual>
+      <origin xyz="0.00375 0 0.0155" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0325 0.042 0.031"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.00375 0 0.0155" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0325 0.042 0.031"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Head" type="revolute">
+    <parent link="NeckSolid"/>
+    <child link="HeadSolid"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0.01 0.019 0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="HeadSolid">
+    <visual>
+      <origin xyz="0.006 -0.019 0.02775" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0445 0.094 0.078"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.006 -0.019 0.02775" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0445 0.094 0.078"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Camera">
+  </link>
+  <joint name="HeadSolid_Camera_joint" type="fixed">
+    <parent link="HeadSolid"/>
+    <child link="Camera"/>
+    <origin xyz="0.015348 -0.019 0.04975" rpy="-1.57079 -0.000008 -1.570799"/>
+  </joint>
+  <link name="HeadLed">
+  </link>
+  <joint name="HeadSolid_HeadLed_joint" type="fixed">
+    <parent link="HeadSolid"/>
+    <child link="HeadLed"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="appearance">
+  </link>
+  <joint name="HeadLed_appearance_joint" type="fixed">
+    <parent link="HeadLed"/>
+    <child link="appearance"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="ShoulderR" type="revolute">
+    <parent link="body"/>
+    <child link="ShoulderRSolid"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.001 -0.06 0.111" rpy="0 0 0"/>
+  </joint>
+  <link name="ShoulderRSolid">
+    <visual>
+      <origin xyz="0 -0.0155 -0.00375" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.031 0.0325"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0155 -0.00375" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.031 0.0325"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmUpperR" type="revolute">
+    <parent link="ShoulderRSolid"/>
+    <child link="ArmUpperRSolid"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0.019 -0.0285 -0.01" rpy="0 0 0"/>
+  </joint>
+  <link name="ArmUpperRSolid">
+    <visual>
+      <origin xyz="-0.0168 -0.0452 0.0007" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0424 0.1129 0.0301"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0168 -0.0452 0.0007" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0424 0.1129 0.0301"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmLowerR" type="revolute">
+    <parent link="ArmUpperRSolid"/>
+    <child link="ArmLowerRbowSolid"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 -0.0904 -0.0001" rpy="0 0 0"/>
+  </joint>
+  <link name="ArmLowerRbowSolid">
+    <visual>
+      <origin xyz="-0.019 -0.072005 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.14901 0.03"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.019 -0.072005 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.14901 0.03"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ShoulderL" type="revolute">
+    <parent link="body"/>
+    <child link="ShoulderLSolid"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.001 0.06 0.111" rpy="0 0 0"/>
+  </joint>
+  <link name="ShoulderLSolid">
+    <visual>
+      <origin xyz="0 0.0155 -0.00375" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.031 0.0325"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.0155 -0.00375" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.031 0.0325"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmUpperL" type="revolute">
+    <parent link="ShoulderLSolid"/>
+    <child link="ArmUpperLSolid"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0.019 0.0285 -0.01" rpy="0 0 0"/>
+  </joint>
+  <link name="ArmUpperLSolid">
+    <visual>
+      <origin xyz="-0.0168 0.0452 0.0007" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0424 0.1129 0.0301"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0168 0.0452 0.0007" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.0424 0.1129 0.0301"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ArmLowerL" type="revolute">
+    <parent link="ArmUpperLSolid"/>
+    <child link="ArmLowerLbowSolid"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 0.0904 -0.0001" rpy="0 0 0"/>
+  </joint>
+  <link name="ArmLowerLbowSolid">
+    <visual>
+      <origin xyz="-0.019 0.072005 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.14901 0.03"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.019 0.072005 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.042 0.14901 0.03"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="PelvYR" type="revolute">
+    <parent link="body"/>
+    <child link="PelvYRSolid"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 -0.035 0" rpy="0 0 0"/>
+  </joint>
+  <link name="PelvYRSolid">
+    <visual>
+      <origin xyz="-0.0015 0 -0.0155" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.025 0.031"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 0 -0.0155" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.025 0.031"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="PelvR" type="revolute">
+    <parent link="PelvYRSolid"/>
+    <child link="PelvRSolid"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.024 0 -0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="PelvRSolid">
+    <visual>
+      <origin xyz="0.003875 -0.0022 -0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07975 0.0424 0.0465"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.003875 -0.0022 -0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07975 0.0424 0.0465"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LegUpperR" type="revolute">
+    <parent link="PelvRSolid"/>
+    <child link="LegUpperRSolid"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0.0241 -0.019 0" rpy="0 0 0"/>
+  </joint>
+  <link name="LegUpperRSolid">
+    <visual>
+      <origin xyz="0.000425 0.0188 -0.05945" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03085 0.0464 0.1239"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.000425 0.0188 -0.05945" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03085 0.0464 0.1239"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LegLowerR" type="revolute">
+    <parent link="LegUpperRSolid"/>
+    <child link="LegLowerRSolid"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 0 -0.11015" rpy="0 0 0"/>
+  </joint>
+  <link name="LegLowerRSolid">
+    <visual>
+      <origin xyz="0 0.02 -0.055" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.044 0.115"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.02 -0.055" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.044 0.115"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="AnkleR" type="revolute">
+    <parent link="LegLowerRSolid"/>
+    <child link="AnkleRSolid"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 0 -0.11" rpy="0 0 0"/>
+  </joint>
+  <link name="AnkleRSolid">
+    <visual>
+      <origin xyz="-0.020225 0.0168 0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07975 0.0424 0.0465"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.020225 0.0168 0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07975 0.0424 0.0465"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FootR" type="revolute">
+    <parent link="AnkleRSolid"/>
+    <child link="FootRSolid"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.0241 0.019 0" rpy="0 0 0"/>
+  </joint>
+  <link name="FootRSolid">
+    <visual>
+      <origin xyz="0.024 -0.0125 -0.0265" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.127 0.08 0.008"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.024 -0.0125 -0.0265" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.127 0.08 0.008"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="PelvYL" type="revolute">
+    <parent link="body"/>
+    <child link="PelvYLSolid"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 0.035 0" rpy="0 0 0"/>
+  </joint>
+  <link name="PelvYLSolid">
+    <visual>
+      <origin xyz="-0.0015 0 -0.0155" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.025 0.031"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0015 0 -0.0155" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.045 0.025 0.031"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="PelvL" type="revolute">
+    <parent link="PelvYLSolid"/>
+    <child link="PelvLSolid"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.024 0 -0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="PelvLSolid">
+    <visual>
+      <origin xyz="0.003875 0.0022 -0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07975 0.0424 0.0465"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.003875 0.0022 -0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07975 0.0424 0.0465"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LegUpperL" type="revolute">
+    <parent link="PelvLSolid"/>
+    <child link="LegUpperLSolid"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0.0241 0.019 0" rpy="0 0 0"/>
+  </joint>
+  <link name="LegUpperLSolid">
+    <visual>
+      <origin xyz="0.000425 -0.0188 -0.05945" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03085 0.0464 0.1239"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.000425 -0.0188 -0.05945" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03085 0.0464 0.1239"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LegLowerL" type="revolute">
+    <parent link="LegUpperLSolid"/>
+    <child link="LegLowerLSolid"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 0 -0.11015" rpy="0 0 0"/>
+  </joint>
+  <link name="LegLowerLSolid">
+    <visual>
+      <origin xyz="0 -0.02 -0.055" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.044 0.115"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.02 -0.055" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.044 0.115"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="AnkleL" type="revolute">
+    <parent link="LegLowerLSolid"/>
+    <child link="AnkleLSolid"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="0 0 -0.11" rpy="0 0 0"/>
+  </joint>
+  <link name="AnkleLSolid">
+    <visual>
+      <origin xyz="-0.0206 -0.0168 0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.079 0.0424 0.0465"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0206 -0.0168 0.012" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.079 0.0424 0.0465"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="FootL" type="revolute">
+    <parent link="AnkleLSolid"/>
+    <child link="FootLSolid"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000" lower="-2.82743" upper="2.82743" velocity="100"/>
+    <origin xyz="-0.0241 -0.019 0" rpy="0 0 0"/>
+  </joint>
+  <link name="FootLSolid">
+    <visual>
+      <origin xyz="0.024 0.0125 -0.0265" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.127 0.08 0.008"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.024 0.0125 -0.0265" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.127 0.08 0.008"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="BodyLed">
+  </link>
+  <joint name="base_link_BodyLed_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="BodyLed"/>
+    <origin xyz="0.03085 0 0.1232" rpy="0 0 0"/>
+  </joint>
+  <link name="appearance_0">
+  </link>
+  <joint name="BodyLed_appearance_0_joint" type="fixed">
+    <parent link="BodyLed"/>
+    <child link="appearance_0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="Speaker">
+  </link>
+  <joint name="base_link_Speaker_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Speaker"/>
+    <origin xyz="0.0385 0.001 0.098" rpy="0 0 0"/>
+  </joint>
+  <link name="Gyro">
+  </link>
+  <joint name="base_link_Gyro_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Gyro"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="Accelerometer">
+  </link>
+  <joint name="base_link_Accelerometer_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="Accelerometer"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>
