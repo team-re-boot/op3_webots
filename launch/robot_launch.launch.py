@@ -1,14 +1,14 @@
 import os
 import pathlib
-from launch.actions import DeclareLaunchArgument
 from launch.substitutions.path_join_substitution import PathJoinSubstitution
 from launch import LaunchDescription
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 import launch
+from ament_index_python import get_package_share_path
 from ament_index_python.packages import get_package_share_directory
-from webots_ros2_driver.webots_launcher import WebotsLauncher, Ros2SupervisorLauncher
+from webots_ros2_driver.webots_launcher import WebotsLauncher
 from webots_ros2_driver.utils import controller_url_prefix
-from webots_ros2_driver.urdf_spawner import URDFSpawner, get_webots_driver_node
 from webots_ros2_driver.wait_for_controller_connection import WaitForControllerConnection
 
 def generate_launch_description():
@@ -63,10 +63,19 @@ def generate_launch_description():
     respawn=True
   )
 
+  rviz_config = os.path.join(get_package_share_path('op3_webots'), 'rviz', 'op3.rviz')
+  rviz = Node(
+    package="rviz2",
+    executable="rviz2",
+    name="rviz2",
+    output="screen",
+    arguments=['-d', rviz_config]
+  )
+
   waiting_nodes = WaitForControllerConnection(
-      target_driver=op3_driver,
-      nodes_to_start=ros_control_spawners
-    )
+    target_driver=op3_driver,
+    nodes_to_start=ros_control_spawners
+  )
 
   return LaunchDescription([
     webots,
@@ -74,6 +83,7 @@ def generate_launch_description():
     robot_state_publisher,
     op3_driver,
     waiting_nodes,
+    rviz,
 
     launch.actions.RegisterEventHandler(
         event_handler=launch.event_handlers.OnProcessExit(
