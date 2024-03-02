@@ -1,12 +1,11 @@
 #VRML_SIM R2023b utf8
 
-IMPORTABLE EXTERNPROTO "../protos/RobocupSoccerField.proto"
-IMPORTABLE EXTERNPROTO "../protos/RobocupTexturedSoccerBall.proto"
+IMPORTABLE EXTERNPROTO "../protos/soccer_field/RobocupSoccerField.proto"
+IMPORTABLE EXTERNPROTO "../protos/soccer_field/RobocupTexturedSoccerBall.proto"
+IMPORTABLE EXTERNPROTO "../protos/robot/RobotisOp3.proto"
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/robotis/darwin-op/protos/RobotisOp3.proto"
-
 
 WorldInfo {
   info [
