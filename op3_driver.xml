@@ -1,7 +1,7 @@
 <library path="op3_webots">
   <!-- typeは "namespace::classname" -->
   <class
-    type="op3_controller::OP3Driver"
+    type="op3_driver::OP3Driver"
     base_class_type="webots_ros2_driver::PluginInterface">
     <description>
       robotis op3 webots ros2 driver
