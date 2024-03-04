@@ -8,10 +8,15 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <depend>webots_ros2_driver</depend>
+  <depend>webots_ros2_control</depend>
+  <depend>joint_state_broadcaster</depend>
+  <depend>joint_state_broadcaster_gui</depend>
+  <depend>robot_state_publisher</depend>
   <depend>rclcpp</depend>
   <depend>geometry_msgs</depend>
-  <depend>webots_ros2_driver</depend>
   <depend>pluginlib</depend>
+  <depend>op3_description</depend>
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

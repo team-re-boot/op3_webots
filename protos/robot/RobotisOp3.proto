@@ -146,18 +146,18 @@ PROTO RobotisOp3 [
             }
             device [
               RotationalMotor {
-                name "PelvYL"
+                name "l_hip_yaw"
                 maxVelocity 100.0
                 minPosition -2.82743338823
                 maxPosition 2.82743338823
                 maxTorque 1000.0
               }
               PositionSensor {
-                name "PelvYLS"
+                name "l_hip_yawS"
               }
             ]
             endPoint Solid {
-              name "PelvYLSolid"
+              name "l_hip_yawSolid"
               translation 0.0 0.035 0.0
               contactMaterial IS contactMaterial
               physics Physics {
@@ -238,18 +238,18 @@ PROTO RobotisOp3 [
                   }
                   device [
                     RotationalMotor {
-                      name "PelvL"
+                      name "l_hip_roll"
                       maxVelocity 100.0
                       minPosition -2.82743338823
                       maxPosition 2.82743338823
                       maxTorque 1000.0
                     }
                     PositionSensor {
-                      name "PelvLS"
+                      name "l_hip_rollS"
                     }
                   ]
                   endPoint Solid {
-                    name "PelvLSolid"
+                    name "l_hip_rollSolid"
                     translation -0.024 0.0 -0.0285
                     contactMaterial IS contactMaterial
                     physics Physics {
@@ -296,18 +296,18 @@ PROTO RobotisOp3 [
                         }
                         device [
                           RotationalMotor {
-                            name "LegUpperL"
+                            name "l_hip_pitch"
                             maxVelocity 100.0
                             minPosition -2.82743338823
                             maxPosition 2.82743338823
                             maxTorque 1000.0
                           }
                           PositionSensor {
-                            name "LegUpperLS"
+                            name "l_hip_pitchS"
                           }
                         ]
                         endPoint Solid {
-                          name "LegUpperLSolid"
+                          name "l_hip_pitchSolid"
                           translation 0.0241 0.019 0.0
                           contactMaterial IS contactMaterial
                           physics Physics {
@@ -378,18 +378,18 @@ PROTO RobotisOp3 [
                               }
                               device [
                                 RotationalMotor {
-                                  name "LegLowerL"
+                                  name "l_knee"
                                   maxVelocity 100.0
                                   minPosition -2.82743338823
                                   maxPosition 2.82743338823
                                   maxTorque 1000.0
                                 }
                                 PositionSensor {
-                                  name "LegLowerLS"
+                                  name "l_kneeS"
                                 }
                               ]
                               endPoint Solid {
-                                name "LegLowerLSolid"
+                                name "l_kneeSolid"
                                 translation 0.0 0.0 -0.11015
                                 contactMaterial IS contactMaterial
                                 physics Physics {
@@ -472,18 +472,18 @@ PROTO RobotisOp3 [
                                     }
                                     device [
                                       RotationalMotor {
-                                        name "AnkleL"
+                                        name "l_ank_pitch"
                                         maxVelocity 100.0
                                         minPosition -2.82743338823
                                         maxPosition 2.82743338823
                                         maxTorque 1000.0
                                       }
                                       PositionSensor {
-                                        name "AnkleLS"
+                                        name "l_ank_pitchS"
                                       }
                                     ]
                                     endPoint Solid {
-                                      name "AnkleLSolid"
+                                      name "l_ank_pitchSolid"
                                       translation 0.0 0.0 -0.11
                                       contactMaterial IS contactMaterial
                                       physics Physics {
@@ -535,18 +535,18 @@ PROTO RobotisOp3 [
                                           }
                                           device [
                                             RotationalMotor {
-                                              name "FootL"
+                                              name "l_ank_roll"
                                               maxVelocity 100.0
                                               minPosition -2.82743338823
                                               maxPosition 2.82743338823
                                               maxTorque 1000.0
                                             }
                                             PositionSensor {
-                                              name "FootLS"
+                                              name "l_ank_rollS"
                                             }
                                           ]
                                           endPoint Solid {
-                                            name "FootLSolid"
+                                            name "l_ank_rollSolid"
                                             translation -0.0241 -0.019 0.0
                                             contactMaterial IS footContactMaterial
                                             physics Physics {
@@ -645,18 +645,18 @@ PROTO RobotisOp3 [
             }
             device [
               RotationalMotor {
-                name "PelvYR"
+                name "r_hip_yaw"
                 maxVelocity 100.0
                 minPosition -2.82743338823
                 maxPosition 2.82743338823
                 maxTorque 1000.0
               }
               PositionSensor {
-                name "PelvYRS"
+                name "r_hip_yawS"
               }
             ]
             endPoint Solid {
-              name "PelvYRSolid"
+              name "r_hip_yawSolid"
               translation 0.0 -0.035 0.0
               contactMaterial IS contactMaterial
               physics Physics {
@@ -737,18 +737,18 @@ PROTO RobotisOp3 [
                   }
                   device [
                     RotationalMotor {
-                      name "PelvR"
+                      name "r_hip_roll"
                       maxVelocity 100.0
                       minPosition -2.82743338823
                       maxPosition 2.82743338823
                       maxTorque 1000.0
                     }
                     PositionSensor {
-                      name "PelvRS"
+                      name "r_hip_rollS"
                     }
                   ]
                   endPoint Solid {
-                    name "PelvRSolid"
+                    name "r_hip_rollSolid"
                     translation -0.024 0.0 -0.0285
                     contactMaterial IS contactMaterial
                     physics Physics {
@@ -795,18 +795,18 @@ PROTO RobotisOp3 [
                         }
                         device [
                           RotationalMotor {
-                            name "LegUpperR"
+                            name "r_hip_pitch"
                             maxVelocity 100.0
                             minPosition -2.82743338823
                             maxPosition 2.82743338823
                             maxTorque 1000.0
                           }
                           PositionSensor {
-                            name "LegUpperRS"
+                            name "r_hip_pitchS"
                           }
                         ]
                         endPoint Solid {
-                          name "LegUpperRSolid"
+                          name "r_hip_pitchSolid"
                           translation 0.0241 -0.019 0.0
                           contactMaterial IS contactMaterial
                           physics Physics {
@@ -879,18 +879,18 @@ PROTO RobotisOp3 [
                               }
                               device [
                                 RotationalMotor {
-                                  name "LegLowerR"
+                                  name "r_knee"
                                   maxVelocity 100.0
                                   minPosition -2.82743338823
                                   maxPosition 2.82743338823
                                   maxTorque 1000.0
                                 }
                                 PositionSensor {
-                                  name "LegLowerRS"
+                                  name "r_kneeS"
                                 }
                               ]
                               endPoint Solid {
-                                name "LegLowerRSolid"
+                                name "r_kneeSolid"
                                 translation 0.0 0.0 -0.11015
                                 contactMaterial IS contactMaterial
                                 physics Physics {
@@ -975,18 +975,18 @@ PROTO RobotisOp3 [
                                     }
                                     device [
                                       RotationalMotor {
-                                        name "AnkleR"
+                                        name "r_ank_pitch"
                                         maxVelocity 100.0
                                         minPosition -2.82743338823
                                         maxPosition 2.82743338823
                                         maxTorque 1000.0
                                       }
                                       PositionSensor {
-                                        name "AnkleRS"
+                                        name "r_ank_pitchS"
                                       }
                                     ]
                                     endPoint Solid {
-                                      name "AnkleRSolid"
+                                      name "r_ank_pitchSolid"
                                       translation 0.0 0.0 -0.11
                                       contactMaterial IS contactMaterial
                                       physics Physics {
@@ -1039,18 +1039,18 @@ PROTO RobotisOp3 [
                                           }
                                           device [
                                             RotationalMotor {
-                                              name "FootR"
+                                              name "r_ank_roll"
                                               maxVelocity 100.0
                                               minPosition -2.82743338823
                                               maxPosition 2.82743338823
                                               maxTorque 1000.0
                                             }
                                             PositionSensor {
-                                              name "FootRS"
+                                              name "r_ank_rollS"
                                             }
                                           ]
                                           endPoint Solid {
-                                            name "FootRSolid"
+                                            name "r_ank_rollSolid"
                                             translation -0.0241 0.019 0.0
                                             contactMaterial IS footContactMaterial
                                             physics Physics {
@@ -1149,18 +1149,18 @@ PROTO RobotisOp3 [
             }
             device [
               RotationalMotor {
-                name "ShoulderL"
+                name "l_sho_pitch"
                 maxVelocity 100.0
                 minPosition -2.82743338823
                 maxPosition 2.82743338823
                 maxTorque 1000.0
               }
               PositionSensor {
-                name "ShoulderLS"
+                name "l_sho_pitchS"
               }
             ]
             endPoint Solid {
-              name "ShoulderLSolid"
+              name "l_sho_pitchSolid"
               translation -0.001 0.06 0.111
               contactMaterial IS contactMaterial
               physics Physics {
@@ -1232,18 +1232,18 @@ PROTO RobotisOp3 [
                   }
                   device [
                     RotationalMotor {
-                      name "ArmUpperL"
+                      name "l_sho_roll"
                       maxVelocity 100.0
                       minPosition -2.82743338823
                       maxPosition 2.82743338823
                       maxTorque 1000.0
                     }
                     PositionSensor {
-                      name "ArmUpperLS"
+                      name "l_sho_rollS"
                     }
                   ]
                   endPoint Solid {
-                    name "ArmUpperLSolid"
+                    name "l_sho_rollSolid"
                     translation 0.019 0.0285 -0.01
                     contactMaterial IS contactMaterial
                     physics Physics {
@@ -1295,18 +1295,18 @@ PROTO RobotisOp3 [
                         }
                         device [
                           RotationalMotor {
-                            name "ArmLowerL"
+                            name "l_el"
                             maxVelocity 100.0
                             minPosition -2.82743338823
                             maxPosition 2.82743338823
                             maxTorque 1000.0
                           }
                           PositionSensor {
-                            name "ArmLowerLS"
+                            name "l_elS"
                           }
                         ]
                         endPoint Solid {
-                          name "ArmLowerLbowSolid"
+                          name "l_elSolid"
                           translation 0.0 0.0904 -0.0001
                           contactMaterial IS handContactMaterial
                           physics Physics {
@@ -1376,18 +1376,18 @@ PROTO RobotisOp3 [
             }
             device [
               RotationalMotor {
-                name "ShoulderR"
+                name "r_sho_pitch"
                 maxVelocity 100.0
                 minPosition -2.82743338823
                 maxPosition 2.82743338823
                 maxTorque 1000.0
               }
               PositionSensor {
-                name "ShoulderRS"
+                name "r_sho_pitchS"
               }
             ]
             endPoint Solid {
-              name "ShoulderRSolid"
+              name "r_sho_pitchSolid"
               translation -0.001 -0.06 0.111
               contactMaterial IS contactMaterial
               physics Physics {
@@ -1458,18 +1458,18 @@ PROTO RobotisOp3 [
                   }
                   device [
                     RotationalMotor {
-                      name "ArmUpperR"
+                      name "r_sho_roll"
                       maxVelocity 100.0
                       minPosition -2.82743338823
                       maxPosition 2.82743338823
                       maxTorque 1000.0
                     }
                     PositionSensor {
-                      name "ArmUpperRS"
+                      name "r_sho_rollS"
                     }
                   ]
                   endPoint Solid {
-                    name "ArmUpperRSolid"
+                    name "r_sho_rollSolid"
                     translation 0.019 -0.0285 -0.01
                     contactMaterial IS contactMaterial
                     physics Physics {
@@ -1522,18 +1522,18 @@ PROTO RobotisOp3 [
                         }
                         device [
                           RotationalMotor {
-                            name "ArmLowerR"
+                            name "r_el"
                             maxVelocity 100.0
                             minPosition -2.82743338823
                             maxPosition 2.82743338823
                             maxTorque 1000.0
                           }
                           PositionSensor {
-                            name "ArmLowerRS"
+                            name "r_elS"
                           }
                         ]
                         endPoint Solid {
-                          name "ArmLowerRbowSolid"
+                          name "r_elSolid"
                           translation 0.0 -0.0904 -0.0001
                           contactMaterial IS handContactMaterial
                           physics Physics {
@@ -1604,18 +1604,18 @@ PROTO RobotisOp3 [
             }
             device [
               RotationalMotor {
-                name "Neck"
+                name "head_pan"
                 maxVelocity 100.0
                 minPosition -2.82743338823
                 maxPosition 2.82743338823
                 maxTorque 1000.0
               }
               PositionSensor {
-                name "NeckS"
+                name "head_panS"
               }
             ]
             endPoint Solid {
-              name "NeckSolid"
+              name "head_panSolid"
               translation -0.001 0.0 0.1365
               contactMaterial IS contactMaterial
               physics Physics {
@@ -1685,18 +1685,18 @@ PROTO RobotisOp3 [
                   }
                   device [
                     RotationalMotor {
-                      name "Head"
+                      name "head_tilt"
                       maxVelocity 100.0
                       minPosition -2.82743338823
                       maxPosition 2.82743338823
                       maxTorque 1000.0
                     }
                     PositionSensor {
-                      name "HeadS"
+                      name "head_tiltS"
                     }
                   ]
                   endPoint Solid {
-                    name "HeadSolid"
+                    name "head_tiltSolid"
                     translation 0.01 0.019 0.0285
                     contactMaterial IS contactMaterial
                     physics Physics {

@@ -13,12 +13,12 @@ WorldInfo {
     "The ROBOTIS OP3 robot simulation model can be programmed using the ROBOTIS OP3 motions files."
   ]
   title "ROBOTIS OP3"
-  basicTimeStep 8
+  basicTimeStep 10
 }
 Viewpoint {
   orientation 0.029988305275456616 0.02190151189563749 -0.9993102748012708 1.8806571734508641
   position -0.10383981060395964 1.078601020859127 0.33806439053012954
-  follow "ROBOTIS OP3"
+  #follow "ROBOTIS OP3"
 }
 TexturedBackground {
 }
@@ -31,14 +31,21 @@ DEF FIELD RobocupSoccerField {
 
 DEF BALL RobocupTexturedSoccerBall {
   texture "jabulani"
-  translation 1.38 -1.26058e-07 0.0785294
+  translation 0.0 0.0 0.0785294
   rotation 0.9999999999999999 0 0 1.8715596617048374e-06
 }
 
+Robot {
+  name "Ros2Supervisor"
+  controller "<extern>"
+  supervisor TRUE
+}
+
 RobotisOp3 {
-  translation -0.5478073202027488 -0.30175708497569004 0.28266467546024465
-  rotation 0 0 1 1.57079632679
-  #controller "<extern>"
-  cameraWidth 320
-  cameraHeight 180
+  translation -0.75 0.0 0.28266467546024465
+  rotation 0 0 0 0
+  controller "<extern>"
+  supervisor TRUE
+  cameraWidth 1920
+  cameraHeight 1080
 }

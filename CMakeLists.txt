@@ -12,6 +12,27 @@ endif()
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
 
+ament_auto_add_library(op3_webots
+  SHARED
+  src/op3_driver.cpp
+)
+
+target_compile_definitions(op3_webots PUBLIC "PLUGINLIB_DISABLE_BOOST_FUNCTIONS")
+pluginlib_export_plugin_description_file(webots_ros2_driver op3_driver.xml)
+
+# install(TARGETS op3_driver DESTINATION lib)
+target_include_directories(
+  op3_webots
+  PRIVATE
+  include
+)
+
+install(TARGETS ${PROJECT_NAME}
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 install(DIRECTORY
   launch
   rviz
