@@ -17,15 +17,19 @@ sudo dpkg -i webots_2023b_amd64.deb
 
 ### 2. Clone Packages and Build
 ```bash
+mkdir -p ~/webots_ws/src && cd ~/webots_ws/src
 git clone git@github.com:team-re-boot/op3_webots.git
+git clone git@github.com:team-re-boot/ROBOTIS-OP3-Common.git
+cd ../
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to op3_webots
 ```
 
 ### 3. Run
 ```bash
-cd op3_webots
-webots world/robotis_op3.wbt
+source ~/webots_ws/install/setup.bash
+ros2 launch op3_webots webots_world.launch.py
 ```
 
 <div align="center">
-<img src="img/webots.png" width="1000">
+  <img src="img/webots.png" width="1000">
 </div>

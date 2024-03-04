@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="robotis_op3">
+
+  <webots>
+    <plugin type="op3_driver::OP3Driver"/>
+  </webots>
+
+</robot>

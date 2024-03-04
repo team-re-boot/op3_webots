@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>op3_webots</name>
+  <version>0.0.0</version>
+  <description>The op3_webots package</description>
+  <maintainer email="rottertarmenation.y11.r18@gmail.com">RyuYamamoto</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>webots_ros2_driver</depend>
+  <depend>webots_ros2_control</depend>
+  <depend>joint_state_broadcaster</depend>
+  <depend>joint_state_broadcaster_gui</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rclcpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>op3_description</depend>
+  
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
