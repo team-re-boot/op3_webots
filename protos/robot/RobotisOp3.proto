@@ -70,6 +70,8 @@ PROTO RobotisOp3 [
       Gyro {
         name "Gyro"
       }
+      InertialUnit {
+      }
       Speaker {
         translation 0.0385 0.001 0.098
         name "Speaker"

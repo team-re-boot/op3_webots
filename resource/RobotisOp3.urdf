@@ -3,6 +3,16 @@
 
   <webots>
     <plugin type="op3_driver::OP3Driver"/>
+
+    <plugin type="webots_ros2_driver::Ros2IMU">
+      <enabled>true</enabled>
+      <topicName>/imu</topicName>
+      <alwaysOn>true</alwaysOn>
+      <frameName>body_link</frameName>
+      <inertialUnitName>inertial unit</inertialUnitName>
+      <gyroName>Gyro</gyroName>
+      <accelerometerName>Accelerometer</accelerometerName>
+    </plugin>
   </webots>
 
 </robot>
