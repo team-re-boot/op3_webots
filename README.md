@@ -25,9 +25,14 @@ colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --package
 ```
 
 ### 3. Run
+Launch Webots.
 ```bash
 source ~/webots_ws/install/setup.bash
 ros2 launch op3_webots webots_world.launch.py
+```
+Launch joint_state_publisher_gui if moving joints.
+```bash
+ros2 launch op3_webots joint_state_publisher_gui.launch.py
 ```
 
 <div align="center">
