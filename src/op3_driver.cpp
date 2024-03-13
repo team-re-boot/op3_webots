@@ -37,27 +37,26 @@ void OP3Driver::init(
 
 void OP3Driver::initialize_joint()
 {
-  motor_joint_table_[0] = "r_hip_yaw";
-  motor_joint_table_[1] = "r_hip_roll";
-  motor_joint_table_[2] = "r_hip_pitch";
-  motor_joint_table_[3] = "r_knee";
-  motor_joint_table_[4] = "r_ank_pitch";
-  motor_joint_table_[5] = "r_ank_roll";
+  motor_joint_table_[0] = "l_hip_yaw";
+  motor_joint_table_[1] = "l_hip_roll";
+  motor_joint_table_[2] = "l_hip_pitch";
+  motor_joint_table_[3] = "l_knee";
+  motor_joint_table_[4] = "l_ank_pitch";
+  motor_joint_table_[5] = "l_ank_roll";
 
-  motor_joint_table_[6] = "l_hip_yaw";
-  motor_joint_table_[7] = "l_hip_roll";
-  motor_joint_table_[8] = "l_hip_pitch";
-  motor_joint_table_[9] = "l_knee";
-  motor_joint_table_[10] = "l_ank_pitch";
-  motor_joint_table_[11] = "l_ank_roll";
+  motor_joint_table_[6] = "r_hip_yaw";
+  motor_joint_table_[7] = "r_hip_roll";
+  motor_joint_table_[8] = "r_hip_pitch";
+  motor_joint_table_[9] = "r_knee";
+  motor_joint_table_[10] = "r_ank_pitch";
+  motor_joint_table_[11] = "r_ank_roll";
 
-  motor_joint_table_[12] = "r_sho_pitch";
-  motor_joint_table_[13] = "l_sho_pitch";
-
-  motor_joint_table_[14] = "r_sho_roll";
-  motor_joint_table_[15] = "l_sho_roll";
-  motor_joint_table_[16] = "r_el";
-  motor_joint_table_[17] = "l_el";
+  motor_joint_table_[12] = "l_sho_pitch";
+  motor_joint_table_[13] = "l_sho_roll";
+  motor_joint_table_[14] = "l_el";
+  motor_joint_table_[15] = "r_sho_pitch";
+  motor_joint_table_[16] = "r_sho_roll";
+  motor_joint_table_[17] = "r_el";
   motor_joint_table_[18] = "head_pan";
   motor_joint_table_[19] = "head_tilt";
 
